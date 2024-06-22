@@ -11,9 +11,9 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 
-pdf_path = 'data/national-guidelines-for-behavioral-health-crisis-care-02242020.pdf'  # Ensure this path is correct
+pdf_path = 'data/Milestone_-_Employee_Handbook_-_2019_Edition_Rev._Nov.2019.pdf'  # Ensure this path is correct
 company_policies_text = extract_text_from_pdf(pdf_path)
 
 # Save the extracted text to a file for easy access
-with open('data/national-guidelines-for-behavioral-health-crisis-care-02242020.pdf', 'w') as f:
+with open('new.txt', 'w') as f:
     f.write(company_policies_text)
