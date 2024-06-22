@@ -12,7 +12,7 @@ def read_text_file(file_path):
     return content
 
 # Load mental health advice from the text file
-text_file_path = 'data/mental_health_advice.txt'
+text_file_path = 'new.txt'
 mental_health_advice = read_text_file(text_file_path)
 
 # Truncate the mental health advice to a reasonable length
