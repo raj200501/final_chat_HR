@@ -3,24 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
+    <title>Milestone Technologies Chatbot</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #bf00ff;
+            background-color: #f0f0f0;
+        }
+        #header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #header img {
+            max-width: 150px;
+        }
+        #header h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        #header p {
+            font-size: 16px;
+            color: #666;
         }
         #chat-container {
             width: 100%;
             max-width: 600px;
-            background: rgb(222, 132, 255);
+            background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            border-radius: 10px;
             overflow: hidden;
+            position: relative;
+        }
+        #chat-container::before,
+        #chat-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            background: linear-gradient(to bottom, rgb(206, 134, 0) 33.33%, rgb(197, 197, 0) 33.33%, rgb(186, 186, 0) 66.66%, rgb(0, 0, 169) 66.66%);
+            background-size: 100% 300%;
+            animation: moveBackground 10s linear infinite;
+        }
+        #chat-container::before {
+            left: 0;
+        }
+        #chat-container::after {
+            right: 0;
+        }
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 100%;
+            }
         }
         #chat-box {
             height: 400px;
@@ -40,25 +82,37 @@
         #input-container {
             display: flex;
             padding: 20px;
+            border-top: 1px solid #ddd;
+            background-color: #f9f9f9;
         }
         #input-container input {
             flex: 1;
             padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 3px;
+            border-radius: 5px;
+            font-size: 16px;
         }
         #input-container button {
             padding: 10px 15px;
             margin-left: 10px;
             border: none;
-            background-color: #b84dff;
+            background-color: #00458a;
             color: white;
-            border-radius: 3px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
+        }
+        #input-container button:hover {
+            background-color: #003366;
         }
     </style>
 </head>
 <body>
+    <div id="header">
+        <img src="logo.png" alt="Milestone Technologies Logo">
+        <h1>Milestone Technologies Chatbot</h1>
+        <p>Your virtual assistant for company policies and information</p>
+    </div>
     <div id="chat-container">
         <div id="chat-box"></div>
         <div id="input-container">
